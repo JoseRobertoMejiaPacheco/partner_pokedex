@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <!-- Wizard -->
+  <!-- evolve esta mal escrito -->
+  <record id="registro_manual_wizard_form" model="ir.ui.view">
+    <field name="name">Evolve Pokemon</field>
+    <field name="model">partner_pokedex.evolve</field>
+    <field name="arch" type="xml">
+      <form>
+        <style>
+            .warninig_message {
+              background-color: #fbe0dd;
+              color:#7f605e ;
+              border-radius: 20px;
+              width: 100%;
+            }
+          </style>
+          <h3 class="warninig_message" align="center">This action cannot be reversed
+            </h3>
+        <group col='4'>
+          <separator string="Pokemon to evolve" colspan="4"/>
+          <field name="pokedex_ids_c" string="Pokemon to evolve" />
+          <field name="confirmation" />
+        </group>      
+        <group>
+          <separator string="Evolve to" colspan="4"/>
+          <field name="pokedex_ids_e" string="Evolve to" />
+        </group>
+        <footer>
+          <button name="evolve_pokemon"  string="Evolve Now!!!" type="object" context="{'pokedex_ids_e':pokedex_ids_e}" default_focus="1" class="oe_highlight" />
+          <button special="cancel"  string="Not Now :(" class="btn btn-link" />
+        </footer>
+      </form>
+    </field>
+  </record>
+
+
+</odoo>

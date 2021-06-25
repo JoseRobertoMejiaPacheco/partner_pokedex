@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Top menu item -->
+
+    <menuitem name="Pokedex" id="partner_pokedex.menu_root"  web_icon="partner_pokedex,static/description/pokemon.jpg" />
+
+    <!-- menu categories -->
+
+    <menuitem name="List of Pokemons" id="partner_pokedex.menu_1" parent="partner_pokedex.menu_root" />
+
+    <!-- actions -->
+
+    <menuitem name="Pokemons" id="partner_pokedex.menu_1_list" parent="partner_pokedex.menu_1" action="partner_pokedex.action_window" />
+    
+
+
+</odoo>

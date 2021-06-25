@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form_inherit_res_partner" model="ir.ui.view">
+        <field name="name">res.partner.view.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="/form/*" position="before">
+                <header>
+                    <button string="Evolve Pokemon" name="evolve_pokemon" type="object" class="oe_highlight" />
+                </header>
+            </xpath>
+            <xpath expr="//page[1]" position="before">
+
+                <page string="My Pokemon">
+                    <field name="pokedex_ids">
+
+                        <tree editable="top">
+                            <field name="image" class="oe_avatar" widget='image'/>
+                            <field name="name" />
+                            <field name="type" widget="many2many_tags" options="{'color_field': 'color'}" />
+                        </tree>
+                    </field>
+                </page>
+
+            </xpath>
+        </field>
+    </record>
+</odoo>
